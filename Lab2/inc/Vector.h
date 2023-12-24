@@ -32,7 +32,7 @@ public:
 
 	void twoDVecSum(Vector2d a) {
 		Vector2d c = Vector2d(*this) + a;
-		std::cout << "Ñóììà âåêòîðîâ: ";
+		std::cout << "Ã‘Ã³Ã¬Ã¬Ã  Ã¢Ã¥ÃªÃ²Ã®Ã°Ã®Ã¢: ";
 		c.print2dVec();
 	};
 
@@ -44,7 +44,7 @@ public:
 
 	void twoDVecSubtr(Vector2d a) {
 		Vector2d c = Vector2d(*this) - a;
-		std::cout << "Ðàçíîñòü âåêòîðîâ: ";
+		std::cout << "ÃÃ Ã§Ã­Ã®Ã±Ã²Ã¼ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã®Ã¢: ";
 		c.print2dVec();
 	}
 
@@ -56,7 +56,7 @@ public:
 
 	void twoDVecTimes(T app) {
 		Vector2d res = Vector2d(*this) * app;
-		std::cout << "Ïðîèçâåäåíèå: ";
+		std::cout << "ÃÃ°Ã®Ã¨Ã§Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¥: ";
 		res.print2dVec();
 	}
 
@@ -68,11 +68,12 @@ public:
 
 	void twoDVecPer(T app) {
 		if (app == 0) {
-			std::cout << "Ïîïûòêà äåëåíèÿ íà íóëü!";
+			std::cout << "ÃÃ®Ã¯Ã»Ã²ÃªÃ  Ã¤Ã¥Ã«Ã¥Ã­Ã¨Ã¿ Ã­Ã  Ã­Ã³Ã«Ã¼!";
+		} else {
+		        Vector2d res = Vector2d(*this) / app;
+		        std::cout << "Ã—Ã Ã±Ã²Ã­Ã®Ã¥: ";
+		        res.print2dVec();
 		}
-		Vector2d res = Vector2d(*this) / app;
-		std::cout << "×àñòíîå: ";
-		res.print2dVec();
 	}
 
 	Vector2d& operator=(Vector2d right) {
@@ -96,7 +97,7 @@ public:
 
 	void twoDVecReverse() {
 		Vector2d res = Vector2d(*this).Reverse();
-		std::cout << "Îáðàòíûé âåêòîð: ";
+		std::cout << "ÃŽÃ¡Ã°Ã Ã²Ã­Ã»Ã© Ã¢Ã¥ÃªÃ²Ã®Ã°: ";
 		res.print2dVec();
 	}
 
@@ -104,7 +105,7 @@ public:
 
 	void print2dNormalized() {
 		Vector2d res = Vector2d(*this).Normalized();
-		std::cout << "Åäèíè÷íûé âåêòîð: ";
+		std::cout << "Ã…Ã¤Ã¨Ã­Ã¨Ã·Ã­Ã»Ã© Ã¢Ã¥ÃªÃ²Ã®Ã°: ";
 		res.print2dVec();
 	}
 
@@ -130,9 +131,9 @@ public:
 
 	void Collinears2d(Vector2d comp) {
 		if (Vector2d(*this).isCollinear(comp)) { 
-			std::cout << "Âåêòîðû êîëëèíåàðíû!\n"; 
+			std::cout << "Ã‚Ã¥ÃªÃ²Ã®Ã°Ã» ÃªÃ®Ã«Ã«Ã¨Ã­Ã¥Ã Ã°Ã­Ã»!\n"; 
 		} else { 
-			std::cout << "Âåêòîðû íå êîëëèíåàðíû!\n";
+			std::cout << "Ã‚Ã¥ÃªÃ²Ã®Ã°Ã» Ã­Ã¥ ÃªÃ®Ã«Ã«Ã¨Ã­Ã¥Ã Ã°Ã­Ã»!\n";
 		}
 	}
 };
@@ -168,7 +169,7 @@ public:
 
 	void threeDVecSum(Vector3d a) {
 		Vector3d res = Vector3d(*this) + a;
-		std::cout << "Ñóììà âåêòîðîâ: ";
+		std::cout << "Ã‘Ã³Ã¬Ã¬Ã  Ã¢Ã¥ÃªÃ²Ã®Ã°Ã®Ã¢: ";
 		res.print3dVec();
 	}
 
@@ -181,7 +182,7 @@ public:
 
 	void threeDVecSubtr(Vector3d a) {
 		Vector3d res = Vector3d(*this) - a;
-		std::cout << "Ðàçíîñòü âåêòîðîâ: ";
+		std::cout << "ÃÃ Ã§Ã­Ã®Ã±Ã²Ã¼ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã®Ã¢: ";
 		res.print3dVec();
 	}
 
@@ -194,7 +195,7 @@ public:
 
 	void threeDVecTimes(T app) {
 		Vector3d res = Vector3d(*this) * app;
-		std::cout << "Ïðîèçâåäåíèå: ";
+		std::cout << "ÃÃ°Ã®Ã¨Ã§Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¥: ";
 		res.print3dVec();
 	}
 
@@ -206,9 +207,13 @@ public:
 	};
 
 	void threeDVecPer(T app) {
-		Vector3d res = Vector3d(*this) / app;
-		std::cout << "×àñòíîå: ";
-		res.print3dVec();
+		if (app == 0) {
+			std::cout << "ÐŸÐ¾Ð¿Ñ‹Ñ‚ÐºÐ° Ð´ÐµÐ»ÐµÐ½Ð¸Ñ Ð½Ð° Ð½ÑƒÐ»ÑŒ!\n";
+		} else {
+		        Vector3d res = Vector3d(*this) / app;
+		        std::cout << "Ã—Ã Ã±Ã²Ã­Ã®Ã¥: ";
+		        res.print3dVec();
+		}
 	}
 
 	Vector3d& operator=(Vector3d right) {
@@ -233,7 +238,7 @@ public:
 
 	void threeDVecReverse() {
 		Vector3d res = Vector3d(*this).Reverse();
-		std::cout << "Îáðàòíûé âåêòîð: ";
+		std::cout << "ÃŽÃ¡Ã°Ã Ã²Ã­Ã»Ã© Ã¢Ã¥ÃªÃ²Ã®Ã°: ";
 		res.print3dVec();
 	}
 
@@ -242,7 +247,7 @@ public:
 
 	void print3dNormalized() {
 		Vector3d res = Vector3d(*this).Normalized();
-		std::cout << "Åäèíè÷íûé âåêòîð: ";
+		std::cout << "Ã…Ã¤Ã¨Ã­Ã¨Ã·Ã­Ã»Ã© Ã¢Ã¥ÃªÃ²Ã®Ã°: ";
 		res.print3dVec();
 	}
 
@@ -261,7 +266,7 @@ public:
 
 	void printCross(Vector3d comp) {
 		Vector3d res = Vector3d(*this).Cross(comp);
-		std::cout << "Âåêòîðíîå ïðîèçâåäåíèå: ";
+		std::cout << "Ã‚Ã¥ÃªÃ²Ã®Ã°Ã­Ã®Ã¥ Ã¯Ã°Ã®Ã¨Ã§Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¥: ";
 		res.print3dVec();
 	}
 
@@ -275,9 +280,9 @@ public:
 
 	void Complanars(Vector3d comp1, Vector3d comp2) {
 		if (Vector3d(*this).isComplanar(comp1, comp2)) { 
-			std::cout << "Âåêòîðû êîìïëàíàðíû!"; 
+			std::cout << "Ã‚Ã¥ÃªÃ²Ã®Ã°Ã» ÃªÃ®Ã¬Ã¯Ã«Ã Ã­Ã Ã°Ã­Ã»!"; 
 		} else { 
-			std::cout << "Âåêòîðû íå êîìïëàíàðíû!" << std::endl;
+			std::cout << "Ã‚Ã¥ÃªÃ²Ã®Ã°Ã» Ã­Ã¥ ÃªÃ®Ã¬Ã¯Ã«Ã Ã­Ã Ã°Ã­Ã»!" << std::endl;
 		}
 	}
 };
