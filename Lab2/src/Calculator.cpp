@@ -21,8 +21,9 @@
 #define threeDDot 18
 #define threeDAngle 19
 #define threeDCross 20
-#define threeDComplanar 21
-#define ekzit 22
+#define threeDTriple 21
+#define threeDComplanar 22
+#define ekzit 23
 
 namespace antov {
 
@@ -111,8 +112,9 @@ namespace antov {
 		std::cout << "18. Ñêàëÿðíîå ïðîèçâåäåíèå 3ä âåêòîðîâ" << std::endl;
 		std::cout << "19. Óãîë ìåæäó 3ä âåêòîðàìè" << std::endl;
 		std::cout << "20. Âåêòîðíîå ïðîèçâåäåíèå 3ä âåêòîðîâ" << std::endl;
-		std::cout << "21. Êîìïëàíàðíû ëè 3ä âåêòîðû?" << std::endl;
-		std::cout << "22. Âûõîä\n";
+		std::cout << "21. Смешанное произведение 3д векторов" << std::endl;
+		std::cout << "22. Компланарны ли 3д векторы?" << std::endl;
+		std::cout << "23. Выход\n";
 		std::cout << ">";
 	}
 
@@ -281,6 +283,16 @@ namespace antov {
 					compVec = vec3dInsert();
 					compVec.print3dVec();
 					seeVec.printCross(compVec);
+					system("pause");
+					printMenu();
+				case threeDTriple:
+					seeVec = vec3dInsert();
+					seeVec.print3dVec();
+					compVec = vec3dInsert();
+					compVec.print3dVec();
+					triple = vec3dInsert();
+					triple.print3dVec();
+					std::cout << "Результат смешанного произведения: " << seeVec.TripleProduct(compVec, triple) << "\n";
 					system("pause");
 					printMenu();
 				case threeDComplanar:
