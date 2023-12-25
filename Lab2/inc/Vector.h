@@ -12,14 +12,12 @@ public:
 	T Y = plast.y - pfirst.y;
 
 	Vector2d() {}
-	Vector2d(Point2d<T> vs, Point2d<T> ve) {
-		this->pfirst = vs;
-		this->plast = ve;
-	}
+	
 	Vector2d(T vx, T vy) {
 		this->X = vx;
 		this->Y = vy;
 	};
+
 	~Vector2d() {}
 
 	void print2dVec() {
@@ -138,10 +136,6 @@ public:
 			std::cout << "Âåêòîðû íå êîëëèíåàðíû!\n";
 		}
 	}
-
-	T Distance(Vector2d comp) {
-		return pfirst.Distance(comp.pfirst);
-	}
 };
 
 template <typename T>
@@ -153,16 +147,16 @@ public:
 	T Z = pl3.z - pf3.z;
 
 	Vector3d() {}
-	Vector3d(Point3d<T> vs, Point3d<T> ve) {
-		this->pf3 = vs;
-		this->pl3 = ve;
-	}
+	
 	Vector3d(T vx, T vy, T vz) {
 		this->X = vx;
 		this->Y = vy;
 		this->Z = vz;
 	};
-	void print3dVec() {
+
+        ~Vector3d() {}
+
+        void print3dVec() {
 		std::cout << "{ " << X << " " << Y << " " << Z << " }\n";
 	}
 
@@ -292,10 +286,6 @@ public:
 		} else { 
 			std::cout << "Âåêòîðû íå êîìïëàíàðíû!" << std::endl;
 		}
-	}
-
-	T Distance(Vector3d comp) {
-		return pf3.Distance(comp.pf3);
 	}
 };
 
