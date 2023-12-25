@@ -68,7 +68,7 @@ public:
 
 	void twoDVecPer(T app) {
 		if (app == 0) {
-			std::cout << "Ïîïûòêà äåëåíèÿ íà íóëü!";
+			std::cout << "Ïîïûòêà äåëåíèÿ íà íóëü!\n";
 		} else {
 		        Vector2d res = Vector2d(*this) / app;
 		        std::cout << "×àñòíîå: ";
