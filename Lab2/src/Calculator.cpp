@@ -27,23 +27,25 @@
 namespace antov {
 
 	Vector2d<float> vec2dInsert() {
-		std::cout << "Îòìåòüòå ñïîñîá ââîäà âåêòîðà - òî÷êè/p èëè êîîðäèíàòû/c: ";
+		std::cout << "ÃŽÃ²Ã¬Ã¥Ã²Ã¼Ã²Ã¥ Ã±Ã¯Ã®Ã±Ã®Ã¡ Ã¢Ã¢Ã®Ã¤Ã  Ã¢Ã¥ÃªÃ²Ã®Ã°Ã  - Ã²Ã®Ã·ÃªÃ¨/p Ã¨Ã«Ã¨ ÃªÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã»/c: ";
 		char choice = ' ';
 		Vector2d<float> res = Vector2d<float>(0, 0);
 		std::cin >> choice;
 		if (choice == 'p') {
-			std::cout << "Êîîðäèíàòû ïåðâîé òî÷êè: ";
-			float x1 = 0, y1 = 0;
-			std::cin >> x1;
-			std::cin >> y1;
-			std::cout << "Êîîðäèíàòû âòîðîé òî÷êè: ";
-			float x2 = 0, y2 = 0;
-			std::cin >> x2;
-			std::cin >> y2;
-			res = Vector2d<float>(x2 - x1, y2 - y1);
+			std::cout << "ÃŠÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã» Ã¯Ã¥Ã°Ã¢Ã®Ã© Ã²Ã®Ã·ÃªÃ¨: ";
+			Point2d<float> ps = Point2d<float>(0, 0);
+                        float x1 = 0, y1 = 0;
+                        std::cin >> x1;  ps.x = x1;
+                        std::cin >> y1;  ps.y = y1;
+			std::cout << "ÃŠÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã» Ã¢Ã²Ã®Ã°Ã®Ã© Ã²Ã®Ã·ÃªÃ¨: ";
+			Point2d<float> pe = Point2d<float>(0, 0);
+                        float x2 = 0, y2 = 0;
+                        std::cin >> x2;  pe.x = x2;
+                        std::cin >> y2;  pe.y = y2;
+                        res.X = pe.x - ps.x;  res.Y = pe.y - ps.y;
 		}
 		if (choice == 'c') {
-			std::cout << "Êîîðäèíàòû âåêòîðà: ";
+			std::cout << "ÃŠÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã» Ã¢Ã¥ÃªÃ²Ã®Ã°Ã : ";
 			float X = 0, Y = 0;
 			std::cin >> X;
 			std::cin >> Y;
@@ -53,25 +55,27 @@ namespace antov {
 	}
 
 	Vector3d<float> vec3dInsert() {
-		std::cout << "Îòìåòüòå ñïîñîá ââîäà âåêòîðà - òî÷êè/p èëè êîîðäèíàòû/c: ";
+		std::cout << "ÃŽÃ²Ã¬Ã¥Ã²Ã¼Ã²Ã¥ Ã±Ã¯Ã®Ã±Ã®Ã¡ Ã¢Ã¢Ã®Ã¤Ã  Ã¢Ã¥ÃªÃ²Ã®Ã°Ã  - Ã²Ã®Ã·ÃªÃ¨/p Ã¨Ã«Ã¨ ÃªÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã»/c: ";
 		char choice = ' ';
 		Vector3d<float> res = Vector3d<float>(0, 0, 0);
 		std::cin >> choice;
 		if (choice == 'p') {
-			std::cout << "Êîîðäèíàòû ïåðâîé òî÷êè: ";
-			float x1 = 0, y1 = 0, z1 = 0;
-			std::cin >> x1;
-			std::cin >> y1;
-			std::cin >> z1;
-			std::cout << "Êîîðäèíàòû âòîðîé òî÷êè: ";
-			float x2 = 0, y2 = 0, z2 = 0;
-			std::cin >> x2;
-			std::cin >> y2;
-			std::cin >> z2;
-			res = Vector3d<float>(x2 - x1, y2 - y1, z2 - z1);
+			std::cout << "ÃŠÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã» Ã¯Ã¥Ã°Ã¢Ã®Ã© Ã²Ã®Ã·ÃªÃ¨: ";
+			Point3d<float> ps = Point3d<float>(0, 0, 0);
+                        float x1 = 0, y1 = 0, z1 = 0;
+                        std::cin >> x1;  ps.x = x1;
+                        std::cin >> y1;  ps.y = y1;
+                        std::cin >> z1;  ps.z = z1;
+			std::cout << "ÃŠÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã» Ã¢Ã²Ã®Ã°Ã®Ã© Ã²Ã®Ã·ÃªÃ¨: ";
+			Point3d<float> pe = Point3d<float>(0, 0, 0);
+                        float x2 = 0, y2 = 0, z2 = 0;
+                        std::cin >> x2;  pe.x = z2;
+                        std::cin >> y2;  pe.y = y2;
+                        std::cin >> z2;  pe.z = z2;
+                        res.X = pe.x - ps.x;  res.Y = pe.y - ps.y;  res.Z = pe.z - ps.z;
 		}
 		if (choice == 'c') {
-			std::cout << "Êîîðäèíàòû âåêòîðà: ";
+			std::cout << "ÃŠÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã» Ã¢Ã¥ÃªÃ²Ã®Ã°Ã : ";
 			float X = 0, Y = 0, Z = 0;
 			std::cin >> X;
 			std::cin >> Y;
@@ -85,30 +89,30 @@ namespace antov {
 		system("cls");
 		setlocale(LC_ALL, "Rus");
 
-		std::cout << "++++++++++++++++++++++++++++++ Îñíîâíûå îïåðàöèè ñ âåêòîðàìè ++++++++++++++++++++++++++++++" << std::endl;
+		std::cout << "++++++++++++++++++++++++++++++ ÃŽÃ±Ã­Ã®Ã¢Ã­Ã»Ã¥ Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã¨ Ã± Ã¢Ã¥ÃªÃ²Ã®Ã°Ã Ã¬Ã¨ ++++++++++++++++++++++++++++++" << std::endl;
 		std::cout << std::endl;
-		std::cout << "1. Óìíîæåíèå 2ä âåêòîðà íà ÷èñëî" << std::endl;
-		std::cout << "2. Äåëåíèå 2ä âåêòîðà íà ÷èñëî" << std::endl;
-		std::cout << "3. Âû÷èñëåíèå äëèíû 2ä âåêòîðà" << std::endl;
-		std::cout << "4. Îáðàòíûé 2ä âåêòîð" << std::endl;
-		std::cout << "5. Íîðìàëèçàöèÿ 2ä âåêòîðà" << std::endl;
-		std::cout << "6. Ñëîæåíèå 2ä âåêòîðîâ" << std::endl;
-		std::cout << "7. Âû÷èòàíèå 2ä âåêòîðîâ" << std::endl;
-		std::cout << "8. Ñêàëÿðíîå ïðîèçâåäåíèå 2ä âåêòîðîâ" << std::endl;
-		std::cout << "9. Óãîë ìåæäó 2ä âåêòîðàìè" << std::endl;
-		std::cout << "10. Êîëëèíåàðíû ëè 2ä âåêòîðû?" << std::endl;
-		std::cout << "11. Óìíîæåíèå 3ä âåêòîðà íà ÷èñëî" << std::endl;
-		std::cout << "12. Äåëåíèå 3ä âåêòîðà íà ÷èñëî" << std::endl;
-		std::cout << "13. Âû÷èñëåíèå äëèíû 3ä âåêòîðà" << std::endl;
-		std::cout << "14. Îáðàòíûé 3ä âåêòîð" << std::endl;
-		std::cout << "15. Íîðìàëèçàöèÿ 3ä âåêòîðà" << std::endl;
-		std::cout << "16. Ñëîæåíèå 3ä âåêòîðîâ" << std::endl;
-		std::cout << "17. Âû÷èòàíèå 3ä âåêòîðîâ" << std::endl;
-		std::cout << "18. Ñêàëÿðíîå ïðîèçâåäåíèå 3ä âåêòîðîâ" << std::endl;
-		std::cout << "19. Óãîë ìåæäó 3ä âåêòîðàìè" << std::endl;
-		std::cout << "20. Âåêòîðíîå ïðîèçâåäåíèå 3ä âåêòîðîâ" << std::endl;
-		std::cout << "21. Êîìïëàíàðíû ëè 3ä âåêòîðû?" << std::endl;
-		std::cout << "22. Âûõîä\n";
+		std::cout << "1. Ã“Ã¬Ã­Ã®Ã¦Ã¥Ã­Ã¨Ã¥ 2Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã  Ã­Ã  Ã·Ã¨Ã±Ã«Ã®" << std::endl;
+		std::cout << "2. Ã„Ã¥Ã«Ã¥Ã­Ã¨Ã¥ 2Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã  Ã­Ã  Ã·Ã¨Ã±Ã«Ã®" << std::endl;
+		std::cout << "3. Ã‚Ã»Ã·Ã¨Ã±Ã«Ã¥Ã­Ã¨Ã¥ Ã¤Ã«Ã¨Ã­Ã» 2Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã " << std::endl;
+		std::cout << "4. ÃŽÃ¡Ã°Ã Ã²Ã­Ã»Ã© 2Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°" << std::endl;
+		std::cout << "5. ÃÃ®Ã°Ã¬Ã Ã«Ã¨Ã§Ã Ã¶Ã¨Ã¿ 2Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã " << std::endl;
+		std::cout << "6. Ã‘Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¥ 2Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã®Ã¢" << std::endl;
+		std::cout << "7. Ã‚Ã»Ã·Ã¨Ã²Ã Ã­Ã¨Ã¥ 2Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã®Ã¢" << std::endl;
+		std::cout << "8. Ã‘ÃªÃ Ã«Ã¿Ã°Ã­Ã®Ã¥ Ã¯Ã°Ã®Ã¨Ã§Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¥ 2Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã®Ã¢" << std::endl;
+		std::cout << "9. Ã“Ã£Ã®Ã« Ã¬Ã¥Ã¦Ã¤Ã³ 2Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã Ã¬Ã¨" << std::endl;
+		std::cout << "10. ÃŠÃ®Ã«Ã«Ã¨Ã­Ã¥Ã Ã°Ã­Ã» Ã«Ã¨ 2Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã»?" << std::endl;
+		std::cout << "11. Ã“Ã¬Ã­Ã®Ã¦Ã¥Ã­Ã¨Ã¥ 3Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã  Ã­Ã  Ã·Ã¨Ã±Ã«Ã®" << std::endl;
+		std::cout << "12. Ã„Ã¥Ã«Ã¥Ã­Ã¨Ã¥ 3Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã  Ã­Ã  Ã·Ã¨Ã±Ã«Ã®" << std::endl;
+		std::cout << "13. Ã‚Ã»Ã·Ã¨Ã±Ã«Ã¥Ã­Ã¨Ã¥ Ã¤Ã«Ã¨Ã­Ã» 3Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã " << std::endl;
+		std::cout << "14. ÃŽÃ¡Ã°Ã Ã²Ã­Ã»Ã© 3Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°" << std::endl;
+		std::cout << "15. ÃÃ®Ã°Ã¬Ã Ã«Ã¨Ã§Ã Ã¶Ã¨Ã¿ 3Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã " << std::endl;
+		std::cout << "16. Ã‘Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¥ 3Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã®Ã¢" << std::endl;
+		std::cout << "17. Ã‚Ã»Ã·Ã¨Ã²Ã Ã­Ã¨Ã¥ 3Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã®Ã¢" << std::endl;
+		std::cout << "18. Ã‘ÃªÃ Ã«Ã¿Ã°Ã­Ã®Ã¥ Ã¯Ã°Ã®Ã¨Ã§Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¥ 3Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã®Ã¢" << std::endl;
+		std::cout << "19. Ã“Ã£Ã®Ã« Ã¬Ã¥Ã¦Ã¤Ã³ 3Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã Ã¬Ã¨" << std::endl;
+		std::cout << "20. Ã‚Ã¥ÃªÃ²Ã®Ã°Ã­Ã®Ã¥ Ã¯Ã°Ã®Ã¨Ã§Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¥ 3Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã®Ã¢" << std::endl;
+		std::cout << "21. ÃŠÃ®Ã¬Ã¯Ã«Ã Ã­Ã Ã°Ã­Ã» Ã«Ã¨ 3Ã¤ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã»?" << std::endl;
+		std::cout << "22. Ã‚Ã»ÃµÃ®Ã¤\n";
 		std::cout << ">";
 	}
 
@@ -131,7 +135,7 @@ namespace antov {
 			else {
 				system("cls"); 
 				switch (choice) {
-				case twoDTimes: // Óìíîæåíèå íà ÷èñëî
+				case twoDTimes: // Ã“Ã¬Ã­Ã®Ã¦Ã¥Ã­Ã¨Ã¥ Ã­Ã  Ã·Ã¨Ã±Ã«Ã®
 					sVec = vec2dInsert();
 					sVec.print2dVec();
 					std::cin >> ant;
@@ -148,7 +152,7 @@ namespace antov {
 				case twoDLength:
 					sVec = vec2dInsert();
 					sVec.print2dVec();
-					std::cout << "Äëèíà âåêòîðà: " << sVec.GetLength() << std::endl;
+					std::cout << "Ã„Ã«Ã¨Ã­Ã  Ã¢Ã¥ÃªÃ²Ã®Ã°Ã : " << sVec.GetLength() << std::endl;
 					system("pause");
 					printMenu();
 				case twoDReverse:
@@ -184,7 +188,7 @@ namespace antov {
 					sVec.print2dVec();
 					pair = vec2dInsert();
 					pair.print2dVec();
-					std::cout << "Ðåçóëüòàò ñêàëÿðíîãî ïðîèçâåäåíèÿ: " << sVec.Dot(pair) << "\n";
+					std::cout << "ÃÃ¥Ã§Ã³Ã«Ã¼Ã²Ã Ã² Ã±ÃªÃ Ã«Ã¿Ã°Ã­Ã®Ã£Ã® Ã¯Ã°Ã®Ã¨Ã§Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¿: " << sVec.Dot(pair) << "\n";
 					system("pause");
 					printMenu();
 				case twoDAngle:
@@ -192,7 +196,7 @@ namespace antov {
 					sVec.print2dVec();
 					pair = vec2dInsert();
 					pair.print2dVec();
-					std::cout << "Óãîë ìåæäó âåêòîðàìè: " << sVec.Angle(pair) << "\n";
+					std::cout << "Ã“Ã£Ã®Ã« Ã¬Ã¥Ã¦Ã¤Ã³ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã Ã¬Ã¨: " << sVec.Angle(pair) << "\n";
 					system("pause");
 					printMenu();
 				case twoDCollinear:
@@ -220,7 +224,7 @@ namespace antov {
 				case threeDLength:
 					seeVec = vec3dInsert();
 					seeVec.print3dVec();
-					std::cout << "Äëèíà âåêòîðà: " << seeVec.GetLength() << std::endl;
+					std::cout << "Ã„Ã«Ã¨Ã­Ã  Ã¢Ã¥ÃªÃ²Ã®Ã°Ã : " << seeVec.GetLength() << std::endl;
 					system("pause");
 					printMenu();
 				case threeDReverse:
@@ -256,7 +260,7 @@ namespace antov {
 					seeVec.print3dVec();
 					compVec = vec3dInsert();
 					compVec.print3dVec();
-					std::cout << "Ðåçóëüòàò ñêàëÿðíîãî ïðîèçâåäåíèÿ: " << seeVec.Dot(compVec) << "\n";
+					std::cout << "ÃÃ¥Ã§Ã³Ã«Ã¼Ã²Ã Ã² Ã±ÃªÃ Ã«Ã¿Ã°Ã­Ã®Ã£Ã® Ã¯Ã°Ã®Ã¨Ã§Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¿: " << seeVec.Dot(compVec) << "\n";
 					system("pause");
 					printMenu();
 				case threeDAngle:
@@ -264,7 +268,7 @@ namespace antov {
 					seeVec.print3dVec();
 					compVec = vec3dInsert();
 					compVec.print3dVec();
-					std::cout << "Óãîë ìåæäó âåêòîðàìè: " << seeVec.Angle(compVec) << "\n";
+					std::cout << "Ã“Ã£Ã®Ã« Ã¬Ã¥Ã¦Ã¤Ã³ Ã¢Ã¥ÃªÃ²Ã®Ã°Ã Ã¬Ã¨: " << seeVec.Angle(compVec) << "\n";
 					system("pause");
 					printMenu();
 				case threeDCross:
