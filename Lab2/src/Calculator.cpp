@@ -138,6 +138,7 @@ namespace antov {
 				case twoDTimes: // Óìíîæåíèå íà ÷èñëî
 					sVec = vec2dInsert();
 					sVec.print2dVec();
+					std::cout << "Число-множитель: ";
 					std::cin >> ant;
 					sVec.twoDVecTimes(ant);
 					system("pause");
@@ -145,6 +146,7 @@ namespace antov {
 				case twoDPer:
 					sVec = vec2dInsert();
 					sVec.print2dVec();
+					std::cout << "Число-делитель: ";
 					std::cin >> ant;
 					sVec.twoDVecPer(ant);
 					system("pause");
@@ -210,6 +212,7 @@ namespace antov {
 				case threeDTimes:
 					seeVec = vec3dInsert();
 					seeVec.print3dVec();
+					std::cout << "Число-множитель: ";
 					std::cin >> ant;
 					seeVec.threeDVecTimes(ant);
 					system("pause");
@@ -217,6 +220,7 @@ namespace antov {
 				case threeDPer:
 					seeVec = vec3dInsert();
 					seeVec.print3dVec();
+					std::cout << "Число-делитель: ";
 					std::cin >> ant;
 					seeVec.threeDVecPer(ant);
 					system("pause");
