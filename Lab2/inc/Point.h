@@ -12,6 +12,10 @@ public:
 		this->y = y;
 	};
 	~Point2d() {}
+
+	T Distance(Point2d ess) {
+		return sqrt((ess.x - x) * (ess.x - x) + (ess.y - y) * (ess.y - y));
+	}
 };
 
 template<class T>
@@ -26,6 +30,10 @@ public:
 		this->z = z;
 	};
 	~Point3d() {}
+
+	T Distance(Point3d ess) {
+		return sqrt((ess.x - x) * (ess.x - x) + (ess.y - y) * (ess.y - y) + (ess.z - z) * (ess.z - z));
+	}
 };
 
 #endif
