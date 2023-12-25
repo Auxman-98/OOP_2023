@@ -69,7 +69,7 @@ namespace antov {
 			std::cout << "Êîîðäèíàòû âòîðîé òî÷êè: ";
 			Point3d<float> pe = Point3d<float>(0, 0, 0);
                         float x2 = 0, y2 = 0, z2 = 0;
-                        std::cin >> x2;  pe.x = z2;
+                        std::cin >> x2;  pe.x = x2;
                         std::cin >> y2;  pe.y = y2;
                         std::cin >> z2;  pe.z = z2;
                         res.X = pe.x - ps.x;  res.Y = pe.y - ps.y;  res.Z = pe.z - ps.z;
