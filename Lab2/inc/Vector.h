@@ -242,7 +242,6 @@ public:
 		res.print3dVec();
 	}
 
-	Vector3d Normalize() { *this /= GetLength(); };
 	Vector3d Normalized() { return Vector3d(*this) /= GetLength(); };
 
 	void print3dNormalized() {
