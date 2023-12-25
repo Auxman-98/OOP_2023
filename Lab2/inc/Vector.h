@@ -21,7 +21,7 @@ public:
 	~Vector2d() {}
 
 	void print2dVec() {
-		std::cout << "{ " << Vector2d(*this).X << " " << Vector2d(*this).Y << " }\n";
+		std::cout << "{ " << X << " " << Y << " }\n";
 	}
 
 	Vector2d& operator+=(Vector2d right) {
@@ -96,7 +96,7 @@ public:
 	};
 
 	void twoDVecReverse() {
-		Vector2d res = Vector2d(*this).Reverse();
+		Vector2d res = Reverse();
 		std::cout << "Îáðàòíûé âåêòîð: ";
 		res.print2dVec();
 	}
@@ -104,7 +104,7 @@ public:
 	Vector2d Normalized() { return Vector2d(*this) /= GetLength(); };
 
 	void print2dNormalized() {
-		Vector2d res = Vector2d(*this).Normalized();
+		Vector2d res = Normalized();
 		std::cout << "Åäèíè÷íûé âåêòîð: ";
 		res.print2dVec();
 	}
@@ -130,7 +130,7 @@ public:
 	};
 
 	void Collinears2d(Vector2d comp) {
-		if (Vector2d(*this).isCollinear(comp)) { 
+		if (isCollinear(comp)) { 
 			std::cout << "Âåêòîðû êîëëèíåàðíû!\n"; 
 		} else { 
 			std::cout << "Âåêòîðû íå êîëëèíåàðíû!\n";
@@ -157,7 +157,7 @@ public:
 	~Vector3d() {}
 
 	void print3dVec() {
-		std::cout << "{ " << Vector3d(*this).X << " " << Vector3d(*this).Y << " " << Vector3d(*this).Z << " }\n";
+		std::cout << "{ " << X << " " << Y << " " << Z << " }\n";
 	}
 
 	Vector3d& operator+=(Vector3d right) {
@@ -237,7 +237,7 @@ public:
 	};
 
 	void threeDVecReverse() {
-		Vector3d res = Vector3d(*this).Reverse();
+		Vector3d res = Reverse();
 		std::cout << "Îáðàòíûé âåêòîð: ";
 		res.print3dVec();
 	}
@@ -245,7 +245,7 @@ public:
 	Vector3d Normalized() { return Vector3d(*this) /= GetLength(); };
 
 	void print3dNormalized() {
-		Vector3d res = Vector3d(*this).Normalized();
+		Vector3d res = Normalized();
 		std::cout << "Åäèíè÷íûé âåêòîð: ";
 		res.print3dVec();
 	}
@@ -264,21 +264,24 @@ public:
 	}
 
 	void printCross(Vector3d comp) {
-		Vector3d res = Vector3d(*this).Cross(comp);
+		Vector3d res = Cross(comp);
 		std::cout << "Âåêòîðíîå ïðîèçâåäåíèå: ";
 		res.print3dVec();
 	}
 
+	T TripleProduct(Vector3d comp1, Vector3d comp2) {
+		return Dot(comp1.Cross(comp2));
+	}
+
 	bool isComplanar(Vector3d comp1, Vector3d comp2) {
 		bool flag = true;
-		Vector3d cr12 = comp1.Cross(comp2);
 
-		if (Dot(cr12) != 0) { flag = false; }
+		if (TripleProduct(comp1, comp2) != 0) { flag = false; }
 		return flag;
 	};
 
 	void Complanars(Vector3d comp1, Vector3d comp2) {
-		if (Vector3d(*this).isComplanar(comp1, comp2)) { 
+		if (isComplanar(comp1, comp2)) { 
 			std::cout << "Âåêòîðû êîìïëàíàðíû!"; 
 		} else { 
 			std::cout << "Âåêòîðû íå êîìïëàíàðíû!" << std::endl;
