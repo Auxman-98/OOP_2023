@@ -77,7 +77,17 @@ int main()
 
 	std::cout << "Ïðîâåðêà âûçîâà ìåòîäà np.zeros" << std::endl;
 	myArray.numFill(0);
-
+        for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 2; j++) {
+			for (int k = 0; k < 2; k++) {
+				std::cout << myArray[i][j][k] << "\t";
+			}
+			std::cout << std::endl;
+		}
+		std::cout << std::endl;
+		std::cout << std::endl;
+	}
+	
 	system("pause");
 	return 0;
 }
