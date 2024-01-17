@@ -1,7 +1,5 @@
 #include <iostream>
 #include <ostream>
-#include "Elementarray.h"
-#include "Submatrix.h"
 
 #ifndef _ARRAY3D_H_
 #define _ARRAY3D_H_
