@@ -25,7 +25,7 @@ int main()
 		std::cout << std::endl;
 	}
 	
-	std::cout << "Ñðåç ìàññèâà ïî êîîðäèíàòå x=1" << std::endl;
+	std::cout << "Ã‘Ã°Ã¥Ã§ Ã¬Ã Ã±Ã±Ã¨Ã¢Ã  Ã¯Ã® ÃªÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã¥ x=1" << std::endl;
 	Array3d<int>::Submatrix slice0d1 = myArray.GetValues0(1);
 	for (int j = 0; j < 2; j++) {
 		for (int i = 0; i < 2; i++) {
@@ -34,14 +34,15 @@ int main()
 		std::cout << std::endl;
 	}
 	std::cout << std::endl;
-	std::cout << "Ñðåç ìàññèâà ïî êîîðäèíàòàì x=0 è y=0" << std::endl;
+	std::cout << "Ã‘Ã°Ã¥Ã§ Ã¬Ã Ã±Ã±Ã¨Ã¢Ã  Ã¯Ã® ÃªÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã Ã¬ x=0 Ã¨ y=0" << std::endl;
 	Array3d<int>::Submatrix::Element slice01d00 = myArray.GetValues01(0, 0);
 	for (int i = 0; i < 2; i++) {
 		std::cout << slice01d00[i] << "\t";
 	}
 	std::cout << std::endl;
+	std::cout << std::endl;
 	
-	std::cout << "Íîâûå ýëåìåíòû ñ êîîðäèíàòîé x=1" << std::endl;
+	std::cout << "ÃÃ®Ã¢Ã»Ã¥ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã» Ã± ÃªÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã®Ã© x=1" << std::endl;
 	myArray.SetValues0(1);
 	for (int k = 0; k < 2; k++) {
 		for (int j = 0; j < 2; j++) {
@@ -50,8 +51,9 @@ int main()
 		std::cout << std::endl;
 	}
 	std::cout << std::endl;
+	std::cout << std::endl;
 
-	std::cout << "Íîâûå ýëåìåíòû ñ êîîðäèíàòàìè y=1 è z=0" << std::endl;
+	std::cout << "ÃÃ®Ã¢Ã»Ã¥ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã» Ã± ÃªÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã Ã¬Ã¨ y=1 Ã¨ z=0" << std::endl;
 	myArray.SetValues12(1, 0);
 	for (int i = 0; i < 2; i++) {
 		std::cout << myArray[0][1][i] << "\t";
@@ -73,7 +75,7 @@ int main()
 		std::cout << std::endl; 
 	}
 
-	std::cout << "Ïðîâåðêà âûçîâà ìåòîäà np.zeros" << std::endl;
+	std::cout << "ÃÃ°Ã®Ã¢Ã¥Ã°ÃªÃ  Ã¢Ã»Ã§Ã®Ã¢Ã  Ã¬Ã¥Ã²Ã®Ã¤Ã  np.zeros" << std::endl;
 	myArray.numFill(0);
 
 	system("pause");
