@@ -223,22 +223,16 @@ public:
 	}
 	void numFill(T scalar)
 	{
-	    if (scalar != 1 && scalar != 0) {
-		    for (int k = 0; k < dimz; k++)
-		    {
-			    for (int j = 0; j < dimy; j++)
-		        {
-				    for (int i = 0; i < dimx; i++)
-				    {
-				        arr[k][j][i] = scalar;
-				    }
-			    }
+	    for (int k = 0; k < dimz; k++)
+            {
+	        for (int j = 0; j < dimy; j++)
+	        {
+		        for (int i = 0; i < dimx; i++)
+			{
+			    arr[k][j][i] = scalar;
+		        }
 	        }
-		}
-		else {
-			std::cout << "Argument not intended for this method!";
-			exit(1);
-		}
+            }
 	}
 };
 
