@@ -28,12 +28,6 @@ public:
 			actions.erase(actions.end());
 		}
 	}
-
-	void relabelKey(const std::string& key, const std::string& virtualKey)
-	{
-		actions.erase(key);
-		setAction(key, virtualKey);
-	}
 };
 
 #endif
