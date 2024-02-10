@@ -3,20 +3,20 @@
 
 std::pair<std::string, std::string> getLoginPassword() {
 	std::string login, password;
-	std::cout << "Ââåäèòå ëîãèí:\n";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð»Ð¾Ð³Ð¸Ð½:\n";
 	std::cin >> login;
-	std::cout << "Ââåäèòå ïàðîëü:\n";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ:\n";
 	std::cin >> password;
 	return std::make_pair(login, password);
 }
 
 std::vector<std::string> getRegistrationData() {
 	std::string name, login, password;
-	std::cout << "Êàê Âàñ çîâóò? (Ââåäèòå òîëüêî èìÿ):\n";
+	std::cout << "ÐšÐ°Ðº Ð’Ð°Ñ Ð·Ð¾Ð²ÑƒÑ‚? (Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð¸Ð¼Ñ):\n";
 	std::cin >> name;
-	std::cout << "Ââåäèòå ëîãèí:\n";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð»Ð¾Ð³Ð¸Ð½:\n";
 	std::cin >> login;
-	std::cout << "Ââåäèòå ïàðîëü:\n";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ:\n";
 	std::cin >> password;
 	return { name, login, password };
 }
@@ -32,7 +32,7 @@ int main()
 	User currentUser;
 
 	while (true) {
-		std::cout << "\n**********\nÎïåðàöèè:\n-1) Âûõîä èç ïðèëîæåíèÿ\n0) Âûõîä èç àêêàóíòà\n1) Âõîä\n2) Çàðåãèñòðèðîâàòüñÿ\n3) Ïîèñê ïîëüçîâàòåëÿ ïî èìåíè\n4) Ïðîñìîòðåòü âñåõ ïîëüçîâàòåëåé" << std::endl;
+		std::cout << "\n**********\nÐžÐ¿ÐµÑ€Ð°Ñ†Ð¸Ð¸:\n-1) Ð’Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ\n0) Ð’Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð°ÐºÐºÐ°ÑƒÐ½Ñ‚Ð°\n1) Ð’Ñ…Ð¾Ð´\n2) Ð ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ\n3) ÐŸÐ¾Ð¸ÑÐº Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ Ð¿Ð¾ Ð¸Ð¼ÐµÐ½Ð¸\n4) ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ Ð²ÑÐµÑ… Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÐµÐ¹" << std::endl;
 		std::cin >> operation;
 
 		switch (operation) {
@@ -47,11 +47,11 @@ int main()
 				currentUser = userRepository.GetByLoginPassword(loginData.first, loginData.second);
 				userManager.LogIn(currentUser);
 				if (userManager.IsAuthorized()) {
-					std::cout << "Ïîëüçîâàòåëü " << currentUser.getName() << " àâòîðèçîâàí" << std::endl;
+					std::cout << "ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒ " << currentUser.getName() << " Ð°Ð²Ñ‚Ð¾Ñ€Ð¸Ð·Ð¾Ð²Ð°Ð½" << std::endl;
 				}
 			}
 			else {
-				std::cout << "×òîáû âûéòè, ñíà÷àëà âûéäèòå èç àêêàóíòà" << std::endl;
+				std::cout << "Ð§Ñ‚Ð¾Ð±Ñ‹ Ð²Ð¾Ð¹Ñ‚Ð¸, ÑÐ½Ð°Ñ‡Ð°Ð»Ð° Ð²Ñ‹Ð¹Ð´Ð¸Ñ‚Ðµ Ð¸Ð· Ð°ÐºÐºÐ°ÑƒÐ½Ñ‚Ð°" << std::endl;
 			}
 		case 2:
 			if (!userManager.IsAuthorized()) {
@@ -59,32 +59,32 @@ int main()
 				currentUser = User(amountUser + 1, registrationData[0], registrationData[1], registrationData[2]);
 				userManager.SignIn(currentUser);
 				if (userManager.IsAuthorized()) {
-					std::cout << "Ïîëüçîâàòåëü " << currentUser.getName() << " çàðåãèñòðèðîâàí" << std::endl;
+					std::cout << "ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒ " << currentUser.getName() << " Ð·Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½" << std::endl;
 				}
 			}
 			else {
-				std::cout << "×òîáû âûéòè, ñíà÷àëà âûéäèòå èç àêêàóíòà" << std::endl;
+				std::cout << "Ð§Ñ‚Ð¾Ð±Ñ‹ Ð²Ð¾Ð¹Ñ‚Ð¸, ÑÐ½Ð°Ñ‡Ð°Ð»Ð° Ð²Ñ‹Ð¹Ð´Ð¸Ñ‚Ðµ Ð¸Ð· Ð°ÐºÐºÐ°ÑƒÐ½Ñ‚Ð°" << std::endl;
 			}
 		case 3:
 			if (userManager.IsAuthorized()) {
-				std::cout << "Ââåäèòå èìÿ ïîëüçîâàòåëÿ:\n";
+				std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ:\n";
 				std::string userName;
 				std::cin >> userName;
 				auto findUser = userRepository.GetByName(userName);
 				std::cout << findUser.getId() << " " << findUser.getName() << " " << findUser.getLogin() << std::endl;
 			}
 			else {
-				std::cout << "Ñíà÷àëà íåîáõîäèìî àâòîðèçîâàòüñÿ" << std::endl;
+				std::cout << "Ð¡Ð½Ð°Ñ‡Ð°Ð»Ð° Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ Ð°Ð²Ñ‚Ð¾Ñ€Ð¸Ð·Ð¾Ð²Ð°Ñ‚ÑŒÑÑ" << std::endl;
 			}
 		case 4:
 			if (userManager.IsAuthorized()) {
-				std::cout << "Ñïèñîê âñåõ ïîëüçîâàòåëåé:\n";
+				std::cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð²ÑÐµÑ… Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÐµÐ¹:\n";
 				for (auto& user : users) {
 					std::cout << user.getId() << " " << user.getName() << " " << user.getLogin() << std::endl;
 				}
 			}
 			else {
-				std::cout << "Ñíà÷àëà íåîáõîäèìî àâòîðèçîâàòüñÿ" << std::endl;
+				std::cout << "Ð¡Ð½Ð°Ñ‡Ð°Ð»Ð° Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ Ð°Ð²Ñ‚Ð¾Ñ€Ð¸Ð·Ð¾Ð²Ð°Ñ‚ÑŒÑÑ" << std::endl;
 			}
 		}
 	}
