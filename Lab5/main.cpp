@@ -49,8 +49,7 @@ int main()
 				if (userManager.IsAuthorized()) {
 					std::cout << "Пользователь " << currentUser.getName() << " авторизован" << std::endl;
 				}
-			}
-			else {
+			} else {
 				std::cout << "Чтобы войти, сначала выйдите из аккаунта" << std::endl;
 			}
 		case 2:
@@ -61,8 +60,7 @@ int main()
 				if (userManager.IsAuthorized()) {
 					std::cout << "Пользователь " << currentUser.getName() << " зарегистрирован" << std::endl;
 				}
-			}
-			else {
+			} else {
 				std::cout << "Чтобы войти, сначала выйдите из аккаунта" << std::endl;
 			}
 		case 3:
@@ -72,8 +70,7 @@ int main()
 				std::cin >> userName;
 				auto findUser = userRepository.GetByName(userName);
 				std::cout << findUser.getId() << " " << findUser.getName() << " " << findUser.getLogin() << std::endl;
-			}
-			else {
+			} else {
 				std::cout << "Сначала необходимо авторизоваться" << std::endl;
 			}
 		case 4:
@@ -82,10 +79,24 @@ int main()
 				for (auto& user : users) {
 					std::cout << user.getId() << " " << user.getName() << " " << user.getLogin() << std::endl;
 				}
-			}
-			else {
+			} else {
 				std::cout << "Сначала необходимо авторизоваться" << std::endl;
 			}
+		case 5:
+	                if (!userManager.IsAuthorized()) {
+		                std::string userName;
+		                std::cin >> userName;
+		                auto findUser = userRepository.GetByName(userName);
+		                userRepository.Remove(findUser);
+	                } else {
+		               std::cout << "Сначала необходимо выйти из аккаунта" << std::endl;
+	                }
+                case 6:
+	                if (!userManager.IsAuthorized()) {
+		               userRepository.Update(User());
+	                } else {
+		               std::cout << "Сначала необходимо выйти из аккаунта" << std::endl;
+	                }
 		}
 	}
 	return 0;
