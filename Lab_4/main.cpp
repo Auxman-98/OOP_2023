@@ -17,9 +17,11 @@ int main()
 	keyboard.undo();
 	keyboard.undo();
 	keyboard.press("d");
+	keyboard.undo();
 	keyboard.press("Ctrl+X");
 	keyboard.press("e");
 	keyboard.press("Ctrl+V");
+	keyboard.press("d");
 	keyboard.press("-");
 	keyboard.press("-");
 	keyboard.reassignKey("k", new CopyCommand());
